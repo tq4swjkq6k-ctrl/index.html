@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Valentine 💖</title>
+
+  <!-- 💗 Google Cute Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      text-align: center;
+      font-family: 'Pacifico', cursive;
+      background: linear-gradient(to bottom, #ffb6c1, #ffe4e9);
+      overflow-x: hidden;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 45px;
+      animation: fadeDown 2s ease;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-top: 10px;
+    }
+
+    p {
+      font-size: 22px;
+    }
+
+    /* 💖 Main Photo */
+    img.main-photo {
+      width: 320px;
+      border-radius: 25px;
+      margin-top: 25px;
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.3);
+      animation: zoomIn 2s ease;
+    }
+
+    /* 🎵 Song Cover Card */
+    .song-card {
+      margin: 25px auto;
+      padding: 15px;
+      width: 320px;
+      background: white;
+      border-radius: 25px;
+      box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .song-card img {
+      width: 100%;
+      border-radius: 20px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: #ff4f87;
+      color: white;
+    }
+
+    button:hover {
+      background: #ff2f6d;
+    }
+
+    /* Animations */
+    @keyframes zoomIn {
+      from {transform: scale(0);}
+      to {transform: scale(1);}
+    }
+
+    @keyframes fadeDown {
+      from {opacity: 0; transform: translateY(-50px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Floating Hearts */
+    .heart {
+      position: absolute;
+      font-size: 25px;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      from {transform: translateY(100vh); opacity: 1;}
+      to {transform: translateY(-10vh); opacity: 0;}
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>To My Love 💖</h1>
+  <h2>မောင်မောင်ရိန်း</h2>
+
+  <!-- 💖 Couple Photo -->
+  <img src="pic1.PNG" class="main-photo">
+
+  <p>I love you so much 💕</p>
+  <p>I love you to the moon and back 🌙</p>
+  <p>မောင်မောင့်ဘေးနားမှာ ကလေးတစ်ယောက်လို နေနိုင်တာ အပျော်ဆုံး 💗</p>
+  <p>သီချင်းတွေအများကြီး ဆိုပြဦးနော် 🎶</p>
+
+  <h2>Purrfect together 🐾❤️</h2>
+  <p>— ဖောင်းစိန် 💌</p>
+
+  <!-- 🎵 Song Cover Section -->
+  <div class="song-card">
+    <h2>🎵 Our Song</h2>
+
+    <!-- Song Cover Image -->
+    <img src="https://img.youtube.com/vi/dyr9LHMq39Y/hqdefault.jpg">
+
+    <button onclick="playSong()">▶️ Play Music</button>
+  </div>
+
+  <!-- Hidden YouTube Player -->
+  <iframe
+    id="ytplayer"
+    width="0"
+    height="0"
+    frameborder="0"
+    allow="autoplay"
+    src="">
+  </iframe>
+
+  <script>
+    function playSong() {
+      document.getElementById("ytplayer").src =
+      "https://www.youtube.com/embed/dyr9LHMq39Y?autoplay=1";
+    }
+
+    /* 💖 Floating Hearts Generator */
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerText = "💖";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 25 + 15 + "px";
+
+      document.body.appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 400);
+  </script>
+
+</body>
+</html>
